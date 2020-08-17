@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .error {
+        color: red;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@4.8.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300, "strokeWidth": 0}, "axis": {"grid": false}, "title": {"fontSize": 20}}, "data": {"values": [{"Country": "Austria", "Year": 2016, "Daily_Time": 2.916666667}, {"Country": "Belgium", "Year": 2016, "Daily_Time": 3.95}, {"Country": "Czech Republic", "Year": 2016, "Daily_Time": 4.033333333}, {"Country": "Estonia", "Year": 2016, "Daily_Time": 5.283333333}, {"Country": "Finland", "Year": 2016, "Daily_Time": 3.366666667}, {"Country": "France", "Year": 2016, "Daily_Time": 4.05}, {"Country": "Germany", "Year": 2016, "Daily_Time": 4.5}, {"Country": "Hungary", "Year": 2016, "Daily_Time": 3.816666667}, {"Country": "Iceland", "Year": 2016, "Daily_Time": 5.333333333}, {"Country": "Ireland", "Year": 2016, "Daily_Time": 3.733333333}, {"Country": "Israel", "Year": 2016, "Daily_Time": 4.416666667}, {"Country": "Italy", "Year": 2016, "Daily_Time": 3.666666667}, {"Country": "Lithuania", "Year": 2016, "Daily_Time": 3.966666667}, {"Country": "Netherlands", "Year": 2016, "Daily_Time": 6.033333333}, {"Country": "Norway", "Year": 2016, "Daily_Time": 4.916666667}, {"Country": "Poland", "Year": 2016, "Daily_Time": 3.466666667}, {"Country": "Portugal", "Year": 2016, "Daily_Time": 5.666666667}, {"Country": "Slovenia", "Year": 2016, "Daily_Time": 2.75}, {"Country": "Spain", "Year": 2016, "Daily_Time": 5.25}, {"Country": "Sweden", "Year": 2016, "Daily_Time": 5.516666667}, {"Country": "Switzerland", "Year": 2016, "Daily_Time": 3.6}, {"Country": "United Kingdom", "Year": 2016, "Daily_Time": 5.15}]}, "mark": {"type": "bar", "size": 17}, "encoding": {"color": {"type": "nominal", "field": "Country", "scale": {"scheme": "dark2"}}, "opacity": {"condition": {"value": 1, "selection": "selector091"}, "value": 0.1}, "tooltip": [{"type": "nominal", "field": "Country", "title": "Country"}, {"type": "quantitative", "field": "Daily_Time", "title": "Hours Spent on Internet"}], "x": {"type": "quantitative", "field": "Daily_Time"}, "y": {"type": "nominal", "field": "Country"}}, "height": 460, "selection": {"selector091": {"type": "multi", "fields": ["Country"], "bind": "legend"}}, "width": 870, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

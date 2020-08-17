@@ -1,0 +1,229 @@
+/* Scrolling effect */
+body, html
+{
+  scroll-behavior: smooth;
+}
+
+/* Styling the Navigation Bar */
+ul
+{ 
+  top: 0;
+  position: absolute;
+  list-style-type: none;
+  padding: 0;
+  background:none;
+  justify-content: space-between; /* adding space between list items */ 
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  float: none;
+}
+
+
+.navbar
+{
+  position: absolute;
+  width: 100%;
+  height: 7vh;
+  padding: 0;
+  background: #123C69;
+  color:#EEE2DC;
+  display:flex;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 1;
+}
+
+
+li 
+{
+  display: inline; /* setting the display of the navbar */
+  float: left; /* placing the items in a line */
+  text-align: center;
+}
+
+li a 
+{
+  display: block; /* setting the display of the navbar menu items */
+  color: #EEE2DC;
+  width:100%;
+  height: 100%;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+li a:hover 
+{
+  color: #FACC2E; /* changing the colour of the navbar item when the cursor hovers on it */
+}
+
+.about, .evolution, .growth, .impact, .conclusion
+{
+  background: #AC3B61;
+  text-align: center;
+  color: #EEE2DC;
+  padding: 4em;
+  height: 100vh;
+}
+
+ .viz1, .viz2, .viz3, .viz4
+{
+  background:white;
+  padding: 4em;
+  width: 100%;
+}
+
+
+section.footer
+{
+  padding: 4em;
+  background: black;
+  color: #848484;
+  text-align: center;
+}
+
+
+h2
+{
+  color: #EEE2DC;
+  font-weight: bold;
+  font-family: "Segoe Script";
+}
+
+h3
+{
+  font-weight: bold;
+  font-family: "Segoe Script";
+}
+
+hr
+{
+  border-width: 5px;
+  width: 75%;
+}
+
+p
+{
+  text-align: justify;
+}
+
+
+a.btn_down
+{
+  text-decoration: none;
+  position: relative;
+  color: #EEE2DC;
+  font-size: 40px;
+  border: 2px solid #EEE2DC;
+  border-radius: 30px;
+  height: 60px;
+  width: 60px;
+  line-height: 60px;
+}
+
+.btn_down:hover
+{
+  font-weight: bold;
+  color: black;
+  border: 4px solid black;
+}
+
+
+.mySlides, .mySlides1, .mySlides2, .mySlides3, .mySlidescov
+{
+  display: none;
+  text-align: center;
+}
+
+.mySlidescov
+{
+  height: 100vh;
+  width: 100%;
+}
+
+/* Slideshow container */
+.slideshow-container 
+{
+  width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next 
+{
+  cursor: pointer;
+  position: absolute;
+  top: 62%;
+  width: auto;
+  padding: 9px;
+  background: #D8D8D8;
+  margin-top: -22px;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 0 20px 20px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next 
+{
+  right: 0;
+  border-radius: 20px 0 0 20px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover 
+{
+  background: #FACC2E;
+}
+
+/* The dots/bullets/indicators */
+.dot, .dot1, .dot2, .dot3
+ {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+
+.coverslide
+{
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  background: black;
+  background-size: contain;
+}
+
+.myDIV
+{
+  cursor: pointer;
+  color:  #AC3B61;
+}
+
+.hide {
+  display: none;
+  text-align: justify;
+}
+
+.myDIV:hover + .hide {
+  display: block;
+  color: #123C69;;
+}
