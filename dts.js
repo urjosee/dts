@@ -143,3 +143,19 @@ for (i = 0; i < coll.length; i++) {
     }
   });
 }
+
+
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() 
+{
+  var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) // Checking if the user is scrolling up
+    {
+      document.getElementById("navbar").style.top = "0"; // Keeping the navbar attached to the top
+    } 
+    else 
+    {
+      document.getElementById("navbar").style.top = "-50px"; // Hiding the navbar
+    }
+  prevScrollpos = currentScrollPos; // Setting the previous scroll as the current scroll
+}
