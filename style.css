@@ -223,7 +223,3 @@ a.btn_down
   text-align: justify;
 }
 
-.myDIV:hover + .hide {
-  display: block;
-  color: #123C69;;
-}
